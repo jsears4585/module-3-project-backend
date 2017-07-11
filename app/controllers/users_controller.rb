@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  # skip_before_filter :verify_authenticity_token, :only => [:create, :show]
 
   def create
     @user = User.create(user_params)
@@ -7,7 +6,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(1)
+    @user = User.find(username: params[:username])
     render json: @user
   end
 
