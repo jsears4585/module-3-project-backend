@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
   resources :users
-  resources :artworks
+  get '/artworks/page/:page', to: 'artworks#index'
+  resources :artworks, except: [:index]
 end
