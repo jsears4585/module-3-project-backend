@@ -1,7 +1,7 @@
 class ArtworksController < ApplicationController
 
   def index
-    @artworks = Kaminari.paginate_array(Artwork.all.order("created_at DESC")).page(params[:page]).per(18)
+    @artworks = Kaminari.paginate_array(Artwork.all.order("created_at DESC")).page(params[:page]).per(27)
     render json: @artworks, each_serializer: ArtworksSerializer, status: 200
   end
 
